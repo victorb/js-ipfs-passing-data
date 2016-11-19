@@ -20878,6 +20878,21 @@
 	          React.createElement(
 	            'h1',
 	            null,
+	            'Usage'
+	          ),
+	          React.createElement(
+	            'p',
+	            null,
+	            'This is a demo of how to pass data between browsers with js-ipfs'
+	          ),
+	          React.createElement(
+	            'p',
+	            null,
+	            'If it get stuck at "Going online", Chrome is blocking the insecure connection to the signaling server. Click on the little shield on the right in the URL bar to allow it to connect.'
+	          ),
+	          React.createElement(
+	            'h1',
+	            null,
 	            'IPFS Status'
 	          ),
 	          React.createElement(
