@@ -1,25 +1,36 @@
 var path = require('path')
 var webpack = require('webpack')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
+
+const isProd = process.env.NODE_ENV === 'production'
+
+const entries = []
+if (!isProd) {
+  entries.push('webpack-dev-server/client?http://localhost:3000')
+  entries.push('webpack/hot/only-dev-server')
+}
+entries.push('./src/index')
+
+const devtool = isProd ? 'source-map' : 'cheap-eval-source-map'
+
+const plugins = isProd ? [
+  new HtmlWebpackPlugin({template: 'index.html'})
+] : [new webpack.HotModuleReplacementPlugin()]
+
+const jsLoader = isProd ? ['babel'] : ['react-hot', 'babel']
 
 module.exports = {
-  devtool: 'source-map',
-  entry: [
-    'webpack-dev-server/client?http://localhost:3000',
-    'webpack/hot/only-dev-server',
-    './src/index'
-  ],
+  devtool,
+  entry: entries,
   output: {
-    path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
-    publicPath: '/static/'
+    path: path.join(__dirname, 'docs'),
+    filename: 'bundle.js'
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ],
+  plugins,
   module: {
     loaders: [{
       test: /\.js$/,
-      loaders: ['react-hot', 'babel'],
+      loaders: jsLoader,
       include: path.join(__dirname, 'src')
     }, {
       test: /\.json$/,
