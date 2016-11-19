@@ -242,6 +242,7 @@ class App extends React.Component {
           connection to the signaling server. Click on the little shield on the
           right in the URL bar to allow it to connect.
         </p>
+        <p>In Firefox you need to set the <code>network.websocket.allowInsecureFromHTTPS</code> property to true for it to work.</p>
         <h1>IPFS Status</h1>
         <div>
           <h3>Status</h3>

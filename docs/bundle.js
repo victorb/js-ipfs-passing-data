@@ -20891,6 +20891,17 @@
 	            'If it get stuck at "Going online", Chrome is blocking the insecure connection to the signaling server. Click on the little shield on the right in the URL bar to allow it to connect.'
 	          ),
 	          React.createElement(
+	            'p',
+	            null,
+	            'In Firefox you need to set the ',
+	            React.createElement(
+	              'code',
+	              null,
+	              'network.websocket.allowInsecureFromHTTPS'
+	            ),
+	            ' property to true for it to work.'
+	          ),
+	          React.createElement(
 	            'h1',
 	            null,
 	            'IPFS Status'
