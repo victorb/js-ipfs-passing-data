@@ -203,38 +203,40 @@ class App extends React.Component {
   }
   render () {
     return <div className='pure-g'>
-      <div className='pure-u-1-3'>
-        <h1>Save Data</h1>
-        <form className='pure-form' action='#' onSubmit={this.saveData}>
-          <fieldset>
-            <input type='text' onChange={this.dataToSaveChange} />
-            &nbsp;
-            <input type='submit' value='Save' hidden />
-            <button className='pure-button pure-button-primary'>
-              <i className='fa fa-save' />
-              &nbsp;
-              Save
-            </button>
-          </fieldset>
-        </form>
-        {this.renderSavedHash(this.state.saved_data_hash)}
-      </div>
-      <div className='pure-u-1-3'>
-        <h1>Load Data</h1>
-        <form className='pure-form' action='#' onSubmit={this.fetchData}>
-          <fieldset>
-            <input type='text' onChange={this.hashToFetchChange} />
-            &nbsp;
-            <input type='submit' value='Load' hidden />
-            {this.renderLoadButton(this.state.fetch_status)}
-          </fieldset>
-        </form>
+      <div className='pure-u-1-2 l-box'>
         <div>
-          {this.renderReturnedData(this.state.returned_data)}
+          <h1>Save Data</h1>
+          <form className='pure-form' action='#' onSubmit={this.saveData}>
+            <fieldset>
+              <input type='text' onChange={this.dataToSaveChange} />
+              &nbsp;
+              <input type='submit' value='Save' hidden />
+              <button className='pure-button pure-button-primary'>
+                <i className='fa fa-save' />
+                &nbsp;
+                Save
+              </button>
+            </fieldset>
+          </form>
+          {this.renderSavedHash(this.state.saved_data_hash)}
         </div>
-        <div>{this.renderFetchTiming(this.state.fetch_timing)}</div>
+        <div>
+          <h1>Load Data</h1>
+          <form className='pure-form' action='#' onSubmit={this.fetchData}>
+            <fieldset>
+              <input type='text' onChange={this.hashToFetchChange} />
+              &nbsp;
+              <input type='submit' value='Load' hidden />
+              {this.renderLoadButton(this.state.fetch_status)}
+            </fieldset>
+          </form>
+          <div>
+            {this.renderReturnedData(this.state.returned_data)}
+          </div>
+          <div>{this.renderFetchTiming(this.state.fetch_timing)}</div>
+        </div>
       </div>
-      <div className='pure-u-1-3'>
+      <div className='pure-u-1-2 l-box'>
         <h1>Usage</h1>
         <p>This is a demo of how to pass data between browsers with js-ipfs</p>
         <p>

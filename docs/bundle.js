@@ -20816,65 +20816,69 @@
 	        { className: 'pure-g' },
 	        React.createElement(
 	          'div',
-	          { className: 'pure-u-1-3' },
+	          { className: 'pure-u-1-2 l-box' },
 	          React.createElement(
-	            'h1',
+	            'div',
 	            null,
-	            'Save Data'
-	          ),
-	          React.createElement(
-	            'form',
-	            { className: 'pure-form', action: '#', onSubmit: this.saveData },
 	            React.createElement(
-	              'fieldset',
+	              'h1',
 	              null,
-	              React.createElement('input', { type: 'text', onChange: this.dataToSaveChange }),
-	              ' ',
-	              React.createElement('input', { type: 'submit', value: 'Save', hidden: true }),
+	              'Save Data'
+	            ),
+	            React.createElement(
+	              'form',
+	              { className: 'pure-form', action: '#', onSubmit: this.saveData },
 	              React.createElement(
-	                'button',
-	                { className: 'pure-button pure-button-primary' },
-	                React.createElement('i', { className: 'fa fa-save' }),
-	                '  Save'
+	                'fieldset',
+	                null,
+	                React.createElement('input', { type: 'text', onChange: this.dataToSaveChange }),
+	                ' ',
+	                React.createElement('input', { type: 'submit', value: 'Save', hidden: true }),
+	                React.createElement(
+	                  'button',
+	                  { className: 'pure-button pure-button-primary' },
+	                  React.createElement('i', { className: 'fa fa-save' }),
+	                  '  Save'
+	                )
 	              )
-	            )
+	            ),
+	            this.renderSavedHash(this.state.saved_data_hash)
 	          ),
-	          this.renderSavedHash(this.state.saved_data_hash)
-	        ),
-	        React.createElement(
-	          'div',
-	          { className: 'pure-u-1-3' },
 	          React.createElement(
-	            'h1',
+	            'div',
 	            null,
-	            'Load Data'
-	          ),
-	          React.createElement(
-	            'form',
-	            { className: 'pure-form', action: '#', onSubmit: this.fetchData },
 	            React.createElement(
-	              'fieldset',
+	              'h1',
 	              null,
-	              React.createElement('input', { type: 'text', onChange: this.hashToFetchChange }),
-	              ' ',
-	              React.createElement('input', { type: 'submit', value: 'Load', hidden: true }),
-	              this.renderLoadButton(this.state.fetch_status)
+	              'Load Data'
+	            ),
+	            React.createElement(
+	              'form',
+	              { className: 'pure-form', action: '#', onSubmit: this.fetchData },
+	              React.createElement(
+	                'fieldset',
+	                null,
+	                React.createElement('input', { type: 'text', onChange: this.hashToFetchChange }),
+	                ' ',
+	                React.createElement('input', { type: 'submit', value: 'Load', hidden: true }),
+	                this.renderLoadButton(this.state.fetch_status)
+	              )
+	            ),
+	            React.createElement(
+	              'div',
+	              null,
+	              this.renderReturnedData(this.state.returned_data)
+	            ),
+	            React.createElement(
+	              'div',
+	              null,
+	              this.renderFetchTiming(this.state.fetch_timing)
 	            )
-	          ),
-	          React.createElement(
-	            'div',
-	            null,
-	            this.renderReturnedData(this.state.returned_data)
-	          ),
-	          React.createElement(
-	            'div',
-	            null,
-	            this.renderFetchTiming(this.state.fetch_timing)
 	          )
 	        ),
 	        React.createElement(
 	          'div',
-	          { className: 'pure-u-1-3' },
+	          { className: 'pure-u-1-2 l-box' },
 	          React.createElement(
 	            'h1',
 	            null,
@@ -131125,7 +131129,7 @@
 	
 	
 	// module
-	exports.push([module.id, "body {\n  background-color: white;\n}\n", ""]);
+	exports.push([module.id, "body {\n  background-color: white;\n}\n\n.pure-g > div {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n}\n.l-box {\n  padding: 1em;\n}\n", ""]);
 	
 	// exports
 
