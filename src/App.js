@@ -235,6 +235,13 @@ class App extends React.Component {
         <div>{this.renderFetchTiming(this.state.fetch_timing)}</div>
       </div>
       <div className='pure-u-1-3'>
+        <h1>Usage</h1>
+        <p>This is a demo of how to pass data between browsers with js-ipfs</p>
+        <p>
+          If it get stuck at "Going online", Chrome is blocking the insecure
+          connection to the signaling server. Click on the little shield on the
+          right in the URL bar to allow it to connect.
+        </p>
         <h1>IPFS Status</h1>
         <div>
           <h3>Status</h3>

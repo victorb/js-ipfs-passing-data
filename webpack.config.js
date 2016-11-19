@@ -13,9 +13,9 @@ entries.push('./src/index')
 
 const devtool = isProd ? 'source-map' : 'cheap-eval-source-map'
 
-const plugins = isProd ? [
-  new HtmlWebpackPlugin({template: 'index.html'})
-] : [new webpack.HotModuleReplacementPlugin()]
+const htmlPage = new HtmlWebpackPlugin({template: 'index.html'})
+
+const plugins = isProd ? [htmlPage] : [htmlPage, new webpack.HotModuleReplacementPlugin()]
 
 const jsLoader = isProd ? ['babel'] : ['react-hot', 'babel']
 
